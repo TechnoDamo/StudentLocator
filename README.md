@@ -7,6 +7,7 @@ StudentLocator is a web application designed to help students find roommates!
      style="width: 150%; height: 150%;" />
 
 ---
+# P.S. Main is the development branch, actual code on the servers is in the stable branch  
 
 ## Features
 
