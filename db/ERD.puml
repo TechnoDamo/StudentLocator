@@ -1,0 +1,36 @@
+@startuml
+
+entity "districts" {
+  * id : int <<PK>>
+  --
+  * name : varchar
+}
+
+entity "regions" {
+  * id : int <<PK>>
+  --
+  * district_id : int <<FK>>
+  * name : varchar
+}
+
+entity "cities" {
+  * id : int <<PK>>
+  --
+  * region_id : int <<FK>>
+  * name : varchar
+}
+
+entity "universities" {
+  * id : int <<PK>>
+  --
+  * city_id : int <<FK>>
+  * name : varchar
+}
+
+' Relationships
+districts ||--o{ regions 
+regions ||--o{ cities  
+cities   ||--o{ universities 
+
+@enduml
+
