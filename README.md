@@ -13,7 +13,8 @@ StudentLocator is a web application designed to help students find roommates!
 
 ---
 
-# Tech Stack
+# OpenAPI Swagger Endpoints
+https://app.swaggerhub.com/apis/TECHNOBLADEDAMIR_1/StudentlLocator/1.0.0#/
 
 ---
 
