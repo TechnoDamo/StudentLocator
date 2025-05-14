@@ -1,0 +1,26 @@
+version: '3.7'
+
+services:
+  timescaledb:
+    image: timescale/timescaledb:latest-pg15
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=load_test
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - timescaledb
+
+  k6:
+    image: xk6-output-timescaledb_k6
+    command: k6 run /scripts/userTest.js
+    volumes:
+      - .:/scripts
+    depends_on:
+      - timescaledb
